@@ -36,10 +36,11 @@ export default function Navbar() {
                 <Link to="home" smooth duration={500} style={{ cursor: 'pointer' }}>
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <span style={{
-                            fontFamily: "'Outfit', sans-serif", fontSize: '24px', fontWeight: '800', letterSpacing: '-1px', color: '#f8fafc',
-                            display: 'flex', alignItems: 'baseline'
+                            fontFamily: "'Outfit', sans-serif", fontSize: '28px', letterSpacing: '-1px', display: 'flex', alignItems: 'baseline'
                         }}>
-                            ANKIT<span style={{ color: '#d4af37', fontSize: '32px', lineHeight: '0' }}>.</span>
+                            <span style={{ fontWeight: '800', color: '#f8fafc' }}>A</span>
+                            <span style={{ fontWeight: '300', color: '#d4af37', marginLeft: '2px' }}>S</span>
+                            <span style={{ color: '#d4af37', fontSize: '32px', lineHeight: '0', fontWeight: '800' }}>.</span>
                         </span>
                     </motion.div>
                 </Link>

@@ -12,8 +12,10 @@ export default function Footer() {
             <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px' }}>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: '20px', fontWeight: '800', color: '#f8fafc' }}>
-                        ANKIT<span style={{ color: '#d4af37' }}>.</span>
+                    <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: '24px', letterSpacing: '-1px', display: 'flex', alignItems: 'baseline' }}>
+                        <span style={{ fontWeight: '800', color: '#f8fafc' }}>A</span>
+                        <span style={{ fontWeight: '300', color: '#d4af37', marginLeft: '2px' }}>S</span>
+                        <span style={{ color: '#d4af37', fontWeight: '800' }}>.</span>
                     </span>
                 </div>
 
