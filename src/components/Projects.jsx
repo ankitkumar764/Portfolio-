@@ -83,7 +83,7 @@ export default function Projects() {
 
                 {/* Featured - Refined Split Layout */}
                 <div style={{ marginBottom: '100px' }}>
-                    <div style={{ background: '#111112', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden', minHeight: '500px', display: 'flex', flexWrap: 'wrap' }}>
+                    <div className="glass-premium" style={{ borderRadius: '12px', overflow: 'hidden', minHeight: '500px', display: 'flex', flexWrap: 'wrap', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}>
                         {/* Image side */}
                         <div style={{ flex: '1.2', minWidth: '320px', position: 'relative', overflow: 'hidden', background: '#000' }}>
                             <AnimatePresence mode="wait">
@@ -123,10 +123,10 @@ export default function Projects() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '40px' }}>
                     {projects.map((item, i) => (
                         <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
-                            style={{ background: '#111112', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '4px', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}
-                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.2)'; e.currentTarget.style.transform = 'translateY(-10px)'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                            className="transition-smooth"
+                            className="transition-smooth glass-premium"
+                            style={{ borderRadius: '12px', overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)' }}
+                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)'; e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 12px 40px 0 rgba(212, 175, 55, 0.15)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 32px 0 rgba(0, 0, 0, 0.3)'; }}
                         >
                             <div style={{ height: '220px', overflow: 'hidden', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <img src={thumb(item.live)} style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }} />

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankit Singh - Resume</title>
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #e0e6e6; color: #333; display: flex; justify-content: center; padding: 40px; }
+    .resume-container { width: 900px; display: flex; background: #f2f5f5; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; }
+    
+    /* Left Column */
+    .left-col { width: 33%; background: #ffffff; padding: 50px 30px; position: relative; z-index: 2; border-right: 1px solid #e8ebeb; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 40px; display: block; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    
+    .section-title { color: #2ba89c; font-size: 16px; text-transform: uppercase; margin-bottom: 20px; font-weight: normal; letter-spacing: 1px; }
+    
+    .contact-item { display: flex; align-items: center; margin-bottom: 18px; color: #0a2530; font-size: 14px; }
+    .contact-item:last-of-type { margin-bottom: 40px; }
+    .contact-icon { margin-right: 15px; width: 20px; text-align: center; color: #111; display: flex; justify-content: center; align-items: center; }
+    
+    .skills-list { list-style: none; margin-bottom: 40px; }
+    .skills-list li { display: flex; align-items: flex-start; margin-bottom: 15px; }
+    .skills-list li::before { content: "•"; color: #2ba89c; font-weight: bold; font-size: 20px; line-height: 18px; margin-right: 10px; }
+    .skills-list span { color: #4a5c68; font-size: 14px; line-height: 1.4; }
+
+    /* Right Column */
+    .right-col { width: 67%; background: #f2f5f5; position: relative; z-index: 1; padding-bottom: 50px; }
+    .header { padding: 40px 40px 30px 40px; text-align: center; }
+    .name { font-size: 54px; font-weight: normal; margin-bottom: 10px; letter-spacing: 1px; }
+    .name .first { color: #2ba89c; }
+    .name .last { color: #666666; }
+    .role { color: #2ba89c; font-size: 18px; font-weight: normal; letter-spacing: 0.5px; }
+    
+    /* Teal Box Ribbon */
+    .ribbon-wrap { position: relative; width: calc(100% + 40px); margin-left: -40px; margin-bottom: 40px; z-index: 2; }
+    .summary-box { background: #2ba89c; padding: 25px 40px 25px 50px; color: white; text-align: center; position: relative; z-index: 2; }
+    .summary-title { font-weight: bold; font-size: 16px; margin-bottom: 12px; }
+    .summary-text { font-size: 14.5px; line-height: 1.6; font-weight: normal; }
+    .ribbon-triangle { position: absolute; left: 0; bottom: -24px; width: 0; height: 0; border-top: 24px solid #1f786f; border-left: 40px solid transparent; z-index: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); }
+    
+    .right-content { padding: 0 40px; }
+    .exp-item { margin-bottom: 30px; }
+    .exp-header { font-size: 15.5px; margin-bottom: 5px; color: #000; }
+    .exp-header strong { font-weight: normal; }
+    .exp-header .company { color: #5a7d8f; }
+    .exp-date { color: #5a7d8f; font-size: 13.5px; margin-bottom: 12px; }
+    .exp-details { list-style: none; }
+    .exp-details li { display: flex; align-items: flex-start; margin-bottom: 10px; }
+    .exp-details li::before { content: "•"; color: #5a7d8f; font-weight: bold; font-size: 20px; line-height: 18px; margin-right: 12px; }
+    .exp-details span { color: #4a5c68; font-size: 14.5px; line-height: 1.5; }
+</style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Left Side -->
+        <div class="left-col">
+            <img src="./profile.jpg" alt="Ankit Singh" class="profile-img">
+            
+            <h2 class="section-title">PERSONAL<br>INFORMATION</h2>
+            <div class="contact-item">
+                <div class="contact-icon"><i data-feather="phone" stroke-width="2.5" width="18" height="18"></i></div>
+                <span>+91 XXXXX XXXXX</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i data-feather="mail" stroke-width="2.5" width="18" height="18"></i></div>
+                <span>ak3185@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i data-feather="user" stroke-width="2.5" width="18" height="18"></i></div>
+                <span>github.com/ankitkumar764</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon"><i data-feather="share-2" stroke-width="2.5" width="18" height="18"></i></div>
+                <span>Gandhinagar, Gujarat</span>
+            </div>
+            
+            <h2 class="section-title">KEY SKILLS</h2>
+            <ul class="skills-list">
+                <li><span>HTML5, CSS3, JavaScript</span></li>
+                <li><span>React, Tailwind, Node.js, Express</span></li>
+                <li><span>MongoDB, REST APIs</span></li>
+                <li><span>C, C++, Data Structures & Algorithms</span></li>
+                <li><span>Git, GitHub, Vercel, Postman</span></li>
+            </ul>
+        </div>
+        
+        <!-- Right Side -->
+        <div class="right-col">
+            <div class="header">
+                <h1 class="name"><span class="first">Ankit</span> <span class="last">Singh</span></h1>
+                <p class="role">Full Stack Engineer</p>
+            </div>
+            
+            <div class="ribbon-wrap">
+                <div class="ribbon-triangle"></div>
+                <div class="summary-box">
+                    <div class="summary-title">Full stack engineer with expertise in modern web technologies</div>
+                    <div class="summary-text">Dedicated software engineer passionate about building clean, responsive, and user-friendly web applications, bringing robust problem-solving skills and a focus on optimal system architecture.</div>
+                </div>
+            </div>
+            
+            <div class="right-content">
+                <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+                <div class="exp-item">
+                    <div class="exp-header"><span style="color: #000; font-weight: 500;">Digital Products Developer</span> <span class="company">| Freelance & Personal</span></div>
+                    <div class="exp-date">June 2023 - Present</div>
+                    <ul class="exp-details">
+                        <li><span>Designed and built 20+ responsive full-stack applications leveraging modern web technologies and frameworks.</span></li>
+                        <li><span>Enhanced application performance through optimized caching strategies and robust RESTful API implementations.</span></li>
+                        <li><span>Maintained clean, readable code with Git version control in collaborative development environments.</span></li>
+                    </ul>
+                </div>
+                
+                <h2 class="section-title">EDUCATION</h2>
+                <div class="exp-item">
+                    <div class="exp-header"><span style="color: #000; font-weight: 500;">Bachelor of Engineering</span></div>
+                    <div class="company" style="font-size: 15px; margin-bottom: 6px;">Swaminarayan University X CG | Ahmedabad</div>
+                    <div class="exp-date">2025 - 2029</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

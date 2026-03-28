@@ -1,15 +1,51 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FiGithub, FiLinkedin, FiCode, FiArrowDown } from 'react-icons/fi';
 
+const Typewriter = ({ text, delay }) => {
+    const [currentText, setCurrentText] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        if (currentIndex < text.length) {
+            const timeout = setTimeout(() => {
+                setCurrentText(prevText => prevText + text[currentIndex]);
+                setCurrentIndex(prev => prev + 1);
+            }, delay);
+            return () => clearTimeout(timeout);
+        }
+    }, [currentIndex, delay, text]);
+
+    return <span>{currentText}<span className="cursor-blink">|</span></span>;
+};
+
 export default function Hero() {
     return (
-        <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', padding: '120px 24px 80px', background: '#0a0a0b' }}>
+        <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', padding: '120px 24px 80px', background: 'transparent' }}>
 
             {/* ── Background: Very subtle soft gradients ── */}
             <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
                 <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%)', filter: 'blur(80px)' }} />
                 <div style={{ position: 'absolute', bottom: '0', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(148, 163, 184, 0.02) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+                
+                {/* Floating Gold Dust Particles */}
+                {[...Array(15)].map((_, i) => {
+                    const randomX = (i * 17) % 100;
+                    const randomY = (i * 23) % 100;
+                    const randomSize = (i % 3) + 2;
+                    const randomDuration = (i % 5) + 4;
+                    const randomDelay = (i % 3);
+                    
+                    return (
+                        <motion.div
+                            key={`dust-${i}`}
+                            animate={{ y: [0, -30, 0], x: [0, 15, 0], opacity: [0.1, 0.8, 0.1] }}
+                            transition={{ duration: randomDuration, repeat: Infinity, ease: "easeInOut", delay: randomDelay }}
+                            style={{ position: 'absolute', top: `${randomY}%`, left: `${randomX}%`, width: `${randomSize}px`, height: `${randomSize}px`, background: '#d4af37', borderRadius: '50%', boxShadow: '0 0 12px rgba(212,175,55,0.8)' }}
+                        />
+                    );
+                })}
             </div>
 
             <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '80px', flexWrap: 'wrap', position: 'relative', zIndex: 10 }}>
@@ -21,12 +57,23 @@ export default function Hero() {
                             Full Stack Engineer
                         </p>
 
-                        <h1 style={{ fontSize: 'clamp(48px, 8vw, 96px)', fontWeight: '800', lineHeight: '1.0', letterSpacing: '-3px', marginBottom: '24px', color: '#f8fafc' }}>
-                            Turning vision into <span style={{ color: '#d4af37' }}>valuable</span> reality.
+                        <h1 style={{ fontSize: 'clamp(42px, 6vw, 72px)', fontWeight: '800', lineHeight: '1.2', letterSpacing: '-2px', marginBottom: '32px', color: '#f8fafc' }}>
+                            Hi, I'm Ankit <br />
+                            <span style={{ 
+                                background: 'linear-gradient(90deg, #d4af37, #fef08a, #d4af37)', 
+                                WebkitBackgroundClip: 'text', 
+                                WebkitTextFillColor: 'transparent', 
+                                backgroundSize: '200% auto', 
+                                animation: 'shine 4s linear infinite',
+                                display: 'inline-block',
+                                marginTop: '12px'
+                            }}>
+                                <Typewriter text="— I build scalable web apps" delay={60} />
+                            </span>
                         </h1>
 
-                        <p style={{ color: '#94a3b8', fontSize: 'clamp(16px, 2vw, 20px)', lineHeight: '1.6', marginBottom: '48px', maxWidth: '600px', fontWeight: '400' }}>
-                            Hi, I'm <span style={{ color: '#f8fafc', fontWeight: '600' }}>Ankit Singh</span>. I'm a BE student at Swaminarayan University X CG, specializing in clean, responsive Full Stack Web Development.
+                        <p style={{ color: '#94a3b8', fontSize: 'clamp(16px, 2vw, 20px)', lineHeight: '1.6', marginBottom: '56px', maxWidth: '600px', fontWeight: '400' }}>
+                            I'm a BE student at Swaminarayan University X CG, specializing in clean, responsive Full Stack Web Development.
                         </p>
 
                         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '60px' }}>

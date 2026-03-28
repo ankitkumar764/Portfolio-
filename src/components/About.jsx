@@ -48,8 +48,9 @@ export default function About() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                         {stats.map((s, i) => (
-                            <motion.div key={i} whileHover={{ y: -8, borderColor: 'rgba(212, 175, 55, 0.3)' }}
-                                style={{ background: '#111112', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '4px', padding: '40px 20px', textAlign: 'center', transition: 'all 0.4s ease' }}>
+                            <motion.div key={i} whileHover={{ y: -8, borderColor: 'rgba(212, 175, 55, 0.5)', boxShadow: '0 10px 30px rgba(212, 175, 55, 0.15)' }}
+                                className="glass-premium"
+                                style={{ borderRadius: '12px', padding: '40px 20px', textAlign: 'center', transition: 'all 0.4s ease', boxShadow: '0 8px 32px rgba(0,0,0,0.3)' }}>
                                 <div style={{ fontSize: '40px', fontWeight: '800', color: '#f8fafc', marginBottom: '8px', fontFamily: "'Outfit', sans-serif" }}>{s.value}</div>
                                 <div style={{ fontSize: '11px', color: '#64748b', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: '700' }}>{s.label}</div>
                             </motion.div>

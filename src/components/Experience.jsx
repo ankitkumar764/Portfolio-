@@ -44,11 +44,11 @@ export default function Experience() {
                 >
                     <h3 style={{ fontSize: 'clamp(24px, 4vw, 36px)', fontWeight: '800', color: '#f8fafc', marginBottom: '16px' }}>Ready for the next challenge.</h3>
                     <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>Exploring full-time opportunities where I can contribute to high-impact engineering teams.</p>
-                    <a href="/resume.pdf" download style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'transparent', color: '#d4af37', border: '1px solid #d4af37', padding: '16px 40px', borderRadius: '4px', fontSize: '14px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', transition: '0.4s' }}
+                    <a href="/modern_resume.html" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', background: 'transparent', color: '#d4af37', border: '1px solid #d4af37', padding: '16px 40px', borderRadius: '4px', fontSize: '14px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '2px', transition: '0.4s' }}
                         onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(212, 175, 55, 0.05)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.transform = 'translateY(0)'; }}
                     >
-                        <FiDownload /> Get Full Résumé
+                        <FiDownload /> View Full Résumé
                     </a>
                 </motion.div>
             </div>
