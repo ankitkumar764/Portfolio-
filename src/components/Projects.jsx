@@ -120,7 +120,7 @@ const ProjectCard = ({ project }) => {
     return (
         <TiltCard 
             className="glass-premium"
-            style={{ borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 20px 50px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(20,20,22,0.6)' }}
+            style={{ borderRadius: '16px', border: '1px solid var(--border-strong)', boxShadow: '0 20px 50px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', backgroundColor: 'rgba(var(--bg-card-str-rgb),0.6)' }}
         >
             <div 
                 onMouseEnter={() => setIsHovered(true)}
@@ -131,7 +131,7 @@ const ProjectCard = ({ project }) => {
                     height: '260px', 
                     overflow: 'hidden', 
                     backgroundColor: '#050505',
-                    borderBottom: '1px solid rgba(255,255,255,0.08)'
+                    borderBottom: '1px solid var(--border-strong)'
                 }}
             >
                 {/* Cinematic Scrolling Video Preview */}
@@ -144,7 +144,7 @@ const ProjectCard = ({ project }) => {
                 </motion.div>
                 
                 {/* Overlay Vignette Gradient */}
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,15,17,1) 0%, transparent 60%)', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(var(--bg-card-rgb),1) 0%, transparent 60%)', pointerEvents: 'none' }} />
                 
                 {/* Project Number Floating on Image */}
                 <div style={{ position: 'absolute', bottom: '20px', right: '24px', pointerEvents: 'none' }}>
@@ -156,11 +156,11 @@ const ProjectCard = ({ project }) => {
 
             {/* Project Content */}
             <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <h3 style={{ fontSize: 'clamp(22px, 3vw, 26px)', fontWeight: '800', color: '#f8fafc', letterSpacing: '-0.5px', marginBottom: '16px' }}>
+                <h3 style={{ fontSize: 'clamp(22px, 3vw, 26px)', fontWeight: '800', color: 'var(--text)', letterSpacing: '-0.5px', marginBottom: '16px' }}>
                     {project.title}
                 </h3>
                 
-                <p style={{ color: '#94a3b8', fontSize: '15px', lineHeight: '1.7', marginBottom: '28px', flex: 1 }}>
+                <p style={{ color: 'var(--text-dim)', fontSize: '15px', lineHeight: '1.7', marginBottom: '28px', flex: 1 }}>
                     {project.desc}
                 </p>
                 
@@ -173,10 +173,10 @@ const ProjectCard = ({ project }) => {
                 </div>
                 
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                    <a href={project.live} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: '800', color: '#0a0a0b', background: '#d4af37', padding: '14px 28px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px', transition: '0.3s', boxShadow: '0 8px 20px rgba(212,175,55,0.25)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 25px rgba(212,175,55,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 20px rgba(212,175,55,0.25)'; }}>
+                    <a href={project.live} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: '800', color: 'var(--bg)', background: 'var(--gold)', padding: '14px 28px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px', transition: '0.3s', boxShadow: '0 8px 20px rgba(212,175,55,0.25)' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 12px 25px rgba(212,175,55,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 20px rgba(212,175,55,0.25)'; }}>
                         View Case Study <FiArrowRight size={16} />
                     </a>
-                    <a href={project.github} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: '600', color: '#94a3b8', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#f8fafc'} onMouseLeave={(e) => e.currentTarget.style.color = '#94a3b8'}>
+                    <a href={project.github} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: '600', color: 'var(--text-dim)', transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--text)'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-dim)'}>
                         <FiGithub size={20} /> Preview
                     </a>
                 </div>
@@ -192,10 +192,10 @@ export default function Projects() {
                 
                 {/* Section Header */}
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '80px', textAlign: 'center' }}>
-                    <p style={{ fontFamily: "'Outfit', sans-serif", color: '#d4af37', fontSize: '14px', fontWeight: '600', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px' }}>
+                    <p style={{ fontFamily: "'Outfit', sans-serif", color: 'var(--gold)', fontSize: '14px', fontWeight: '600', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px' }}>
                         Showcase
                     </p>
-                    <h2 style={{ fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '800', color: '#f8fafc', letterSpacing: '-2px', lineHeight: '1.1' }}>
+                    <h2 style={{ fontSize: 'clamp(40px, 6vw, 64px)', fontWeight: '800', color: 'var(--text)', letterSpacing: '-2px', lineHeight: '1.1' }}>
                         Cinematic Works.
                     </h2>
                 </motion.div>
@@ -218,15 +218,15 @@ export default function Projects() {
                 {/* Quote Section */}
                 <div style={{ marginTop: '140px', width: '100%', textAlign: 'center' }}>
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1, ease: 'easeOut' }}>
-                        <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(20px, 3vw, 32px)', fontStyle: 'italic', fontWeight: '500', lineHeight: '1.6', margin: '0 0 24px 0', color: '#94a3b8' }}>
+                        <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(20px, 3vw, 32px)', fontStyle: 'italic', fontWeight: '500', lineHeight: '1.6', margin: '0 0 24px 0', color: 'var(--text-dim)' }}>
                             <span style={{ color: '#475569' }}>"</span>
-                            You have the <span style={{ color: '#d4af37' }}>right</span> to perform your actions,
+                            You have the <span style={{ color: 'var(--gold)' }}>right</span> to perform your actions,
                             <br />
-                            but <span style={{ color: '#f8fafc' }}>never</span> to the fruits of those actions.
+                            but <span style={{ color: 'var(--text)' }}>never</span> to the fruits of those actions.
                             <span style={{ color: '#475569' }}>"</span>
                         </h3>
-                        <p style={{ fontSize: '13px', color: '#64748b', fontWeight: '600', letterSpacing: '4px', textTransform: 'uppercase' }}>
-                            — Words of <span style={{ color: '#d4af37', fontWeight: '800' }}>Krishna</span>
+                        <p style={{ fontSize: '13px', color: 'var(--text-mut)', fontWeight: '600', letterSpacing: '4px', textTransform: 'uppercase' }}>
+                            — Words of <span style={{ color: 'var(--gold)', fontWeight: '800' }}>Krishna</span>
                         </p>
                     </motion.div>
                 </div>

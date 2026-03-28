@@ -8,22 +8,22 @@ export default function Footer() {
     ];
 
     return (
-        <footer style={{ padding: '80px 24px', background: '#0a0a0b', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <footer style={{ padding: '80px 24px', background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px' }}>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: '24px', letterSpacing: '-1px', display: 'flex', alignItems: 'baseline' }}>
-                        <span style={{ fontWeight: '800', color: '#f8fafc' }}>A</span>
-                        <span style={{ fontWeight: '300', color: '#d4af37', marginLeft: '2px' }}>S</span>
-                        <span style={{ color: '#d4af37', fontWeight: '800' }}>.</span>
+                        <span style={{ fontWeight: '800', color: 'var(--text)' }}>A</span>
+                        <span style={{ fontWeight: '300', color: 'var(--gold)', marginLeft: '2px' }}>S</span>
+                        <span style={{ color: 'var(--gold)', fontWeight: '800' }}>.</span>
                     </span>
                 </div>
 
                 <nav style={{ display: 'flex', gap: '32px' }}>
                     {['Home', 'About', 'Projects', 'Experience'].map(link => (
-                        <a key={link} href={`#${link.toLowerCase()}`} style={{ color: '#64748b', fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', transition: '0.3s' }}
-                            onMouseEnter={(e) => e.target.style.color = '#f8fafc'}
-                            onMouseLeave={(e) => e.target.style.color = '#64748b'}
+                        <a key={link} href={`#${link.toLowerCase()}`} style={{ color: 'var(--text-mut)', fontSize: '13px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', transition: '0.3s' }}
+                            onMouseEnter={(e) => e.target.style.color = 'var(--text)'}
+                            onMouseLeave={(e) => e.target.style.color = 'var(--text-mut)'}
                         >
                             {link}
                         </a>
@@ -32,9 +32,9 @@ export default function Footer() {
 
                 <div style={{ display: 'flex', gap: '24px' }}>
                     {social.map((s, i) => (
-                        <a key={i} href={s.href} target="_blank" rel="noreferrer" style={{ color: '#64748b', transition: '0.3s' }}
-                            onMouseEnter={(e) => e.currentTarget.style.color = '#d4af37'}
-                            onMouseLeave={(e) => e.currentTarget.style.color = '#64748b'}
+                        <a key={i} href={s.href} target="_blank" rel="noreferrer" style={{ color: 'var(--text-mut)', transition: '0.3s' }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gold)'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-mut)'}
                         >
                             <s.Icon size={18} />
                         </a>

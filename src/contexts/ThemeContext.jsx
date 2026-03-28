@@ -1,0 +1,32 @@
+// src/contexts/ThemeContext.jsx
+import React, { createContext, useState, useEffect } from 'react';
+
+export const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+    const [theme, setTheme] = useState('dark'); // Default to our premium dark
+
+    useEffect(() => {
+        const storedTheme = localStorage.getItem('portfolio-theme');
+        if (storedTheme) {
+            setTheme(storedTheme);
+            document.documentElement.setAttribute('data-theme', storedTheme);
+        } else {
+            // Apply fallback
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+        localStorage.setItem('portfolio-theme', newTheme);
+        document.documentElement.setAttribute('data-theme', newTheme);
+    };
+
+    return (
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+        </ThemeContext.Provider>
+    );
+};

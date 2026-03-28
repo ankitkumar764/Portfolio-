@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function AmbientBackground() {
     return (
-        <div style={{ position: 'fixed', inset: 0, zIndex: -1, overflow: 'hidden', background: '#0a0a0b', pointerEvents: 'none' }}>
+        <div style={{ position: 'fixed', inset: 0, zIndex: -1, overflow: 'hidden', background: 'var(--bg)', pointerEvents: 'none' }}>
             {/* Elegant Background Grid Layer */}
             <div style={{
                 position: 'absolute',

@@ -42,7 +42,7 @@ export default function CustomCursor() {
     default: {
       x: mousePosition.x - 4,
       y: mousePosition.y - 4,
-      backgroundColor: '#d4af37',
+      backgroundColor: 'var(--gold)',
       height: 8,
       width: 8,
       borderRadius: '50%',
@@ -52,7 +52,7 @@ export default function CustomCursor() {
       x: mousePosition.x - 24,
       y: mousePosition.y - 24,
       backgroundColor: 'rgba(212, 175, 55, 0.2)',
-      border: '1px solid #d4af37',
+      border: '1px solid var(--gold)',
       height: 48,
       width: 48,
       borderRadius: '50%',

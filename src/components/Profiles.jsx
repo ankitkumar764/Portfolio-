@@ -14,7 +14,7 @@ export default function Profiles() {
     return (
         <section style={{ padding: '80px 24px' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
-                <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: '700', color: '#94a3b8', marginBottom: '40px' }}>
+                <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: '700', color: 'var(--text-dim)', marginBottom: '40px' }}>
                     Find me across the web
                 </motion.h2>
                 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
