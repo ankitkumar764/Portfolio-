@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
-import GitHubCalendar from 'react-github-calendar';
+import { GitHubCalendar } from 'react-github-calendar';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { FiTerminal, FiCode, FiActivity } from 'react-icons/fi';
 
