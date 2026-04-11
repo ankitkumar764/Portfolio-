@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiAward, FiCheckCircle } from 'react-icons/fi';
+import { Helmet } from 'react-helmet';
 
 const certificates = [
     {
@@ -30,6 +31,16 @@ const certificates = [
 
 export default function Certificates() {
     return (
+        <>
+        <Helmet>
+                <title>Certifications - Ankit Kumar</title>
+                <meta name="description" content="Professional certifications earned by Ankit Kumar, including AWS, Google Cloud, and Microsoft Azure certifications." />
+                <meta name="keywords" content="Ankit Kumar, Certifications, AWS, Google Cloud, Azure, Professional Certifications" />
+                <meta name="author" content="Ankit Kumar" />
+                <meta property="og:title" content="Certifications - Ankit Kumar" />
+                <meta property="og:description" content="Professional certifications earned by Ankit Kumar." />
+                <meta property="og:type" content="website" />
+            </Helmet>
         <section style={{ padding: '160px 24px 100px', minHeight: '100vh', position: 'relative', background: 'var(--bg)' }}>
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                 
@@ -135,5 +146,6 @@ export default function Certificates() {
                 </motion.div>
             </div>
         </section>
+        </>
     );
 }
