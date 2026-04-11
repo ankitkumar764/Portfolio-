@@ -14,7 +14,7 @@ const Typewriter = ({ phrases, typingSpeed = 70, deletingSpeed = 40, pauseTime =
     useEffect(() => {
         let timer;
         const currentPhrase = phrases[loopNum % phrases.length];
-        
+
         if (isDeleting) {
             timer = setTimeout(() => {
                 setText(currentPhrase.substring(0, text.length - 1));
@@ -53,15 +53,15 @@ export default function Hero() {
 
     // Parallax Scroll Hooks
     const { scrollY } = useScroll();
-    
+
     // Apple-style Parallax Values
     // Background moves down (slow scroll illusion)
     const bgY = useTransform(scrollY, [0, 1000], [0, 300]);
     const bgOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-    
+
     // Text moves up fast
     const textY = useTransform(scrollY, [0, 1000], [0, -250]);
-    
+
     // Image moves up semi-fast but slower than text
     const imageY = useTransform(scrollY, [0, 1000], [0, -50]);
 
@@ -80,7 +80,7 @@ export default function Hero() {
 
                 {/* Text Content with 3D Mouse Parallax + Scroll Parallax */}
                 <motion.div style={{ flex: '1.2', minWidth: '320px', perspective: '1000px', y: textY }}>
-                    <motion.div 
+                    <motion.div
                         style={{ transformStyle: 'preserve-3d' }}
                         animate={{ rotateX: mousePosition.x, rotateY: mousePosition.y }}
                         transition={{ type: 'spring', stiffness: 75, damping: 15, mass: 0.5 }}
@@ -95,11 +95,11 @@ export default function Hero() {
 
                             <h1 style={{ fontSize: 'clamp(48px, 6vw, 84px)', fontWeight: '800', lineHeight: '1.1', letterSpacing: '-3px', marginBottom: '24px', color: 'var(--text)', display: 'flex', flexDirection: 'column' }}>
                                 <span>Design driven</span>
-                                <span style={{ 
-                                    background: 'linear-gradient(90deg, var(--cyan), #818cf8, var(--cyan))', 
-                                    WebkitBackgroundClip: 'text', 
-                                    WebkitTextFillColor: 'transparent', 
-                                    backgroundSize: '200% auto', 
+                                <span style={{
+                                    background: 'linear-gradient(90deg, var(--cyan), #818cf8, var(--cyan))',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundSize: '200% auto',
                                     animation: 'shine 4s linear infinite',
                                     display: 'inline-block'
                                 }}>
@@ -160,25 +160,25 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Profile with refined elevation + Mouse Tilt + Scroll Parallax */}
-                <motion.div 
+                <motion.div
                     onDoubleClick={() => {
                         setIsSpinning(true);
                         setTimeout(() => setIsSpinning(false), 2000);
                         confetti({ particleCount: 80, spread: 70, origin: { y: 0.4 }, colors: ['#06b6d4', '#f8fafc', '#0f172a'] });
                     }}
-                    initial={{ opacity: 0, scale: 0.95 }} 
-                    animate={{ 
-                        opacity: 1, 
-                        scale: 1, 
-                        rotateX: isSpinning ? 360 : mousePosition.x * 0.5, 
-                        rotateY: isSpinning ? 720 : mousePosition.y * 0.5 
-                    }} 
-                    transition={{ 
-                        duration: isSpinning ? 2 : 1.2, 
-                        ease: [0.16, 1, 0.3, 1], 
-                        rotateX: { type: 'spring', stiffness: 75, damping: 15 }, 
-                        rotateY: { type: 'spring', stiffness: 75, damping: 15 } 
-                    }} 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        rotateX: isSpinning ? 360 : mousePosition.x * 0.5,
+                        rotateY: isSpinning ? 720 : mousePosition.y * 0.5
+                    }}
+                    transition={{
+                        duration: isSpinning ? 2 : 1.2,
+                        ease: [0.16, 1, 0.3, 1],
+                        rotateX: { type: 'spring', stiffness: 75, damping: 15 },
+                        rotateY: { type: 'spring', stiffness: 75, damping: 15 }
+                    }}
                     style={{ position: 'relative', transformStyle: 'preserve-3d', perspective: '1000px', y: imageY, cursor: 'crosshair', flex: '1', display: 'flex', justifyContent: 'center' }}
                 >
                     <div style={{ position: 'relative', width: 'min(400px, 90vw)', height: 'min(520px, 120vw)', transform: 'translateZ(30px)' }}>
@@ -193,7 +193,7 @@ export default function Hero() {
                         }}>
                             <img src="/profile.jpg" alt="Ankit Singh" style={{ width: '100%', height: '100%', objectFit: 'cover', mixBlendMode: 'luminosity', filter: 'contrast(1.1) brightness(0.9)' }} />
                             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(var(--bg-rgb), 0.8), transparent 60%)' }} />
-                            
+
                             {/* Floating Stats or Tags inside the image container */}
                             <div style={{ position: 'absolute', bottom: '24px', left: '24px', right: '24px', display: 'flex', gap: '12px' }}>
                                 <div style={{ background: 'rgba(6, 182, 212, 0.2)', backdropFilter: 'blur(10px)', border: '1px solid rgba(6, 182, 212, 0.3)', borderRadius: '8px', padding: '8px 16px', fontSize: '12px', fontWeight: '600', color: 'var(--cyan)' }}>
