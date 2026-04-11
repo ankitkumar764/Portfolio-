@@ -26,7 +26,7 @@ const LiquidGold = () => {
             <mesh ref={meshRef} position={[3.5, 0, -2]} scale={[1.8, 1.8, 1.8]}>
                 <sphereGeometry args={[1, 128, 128]} />
                 <MeshDistortMaterial 
-                    color="#d4af37" 
+                    color="#22d3ee" 
                     envMapIntensity={2.5} 
                     clearcoat={1} 
                     clearcoatRoughness={0.1} 
@@ -45,8 +45,8 @@ export default function Hero3D() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
             <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true, antialias: true }}>
                 <ambientLight intensity={0.5} />
-                <directionalLight position={[10, 10, 5]} intensity={1.5} />
-                <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#d4af37" />
+                <pointLight position={[10, 10, 10]} intensity={1.5} color="#06b6d4" />
+                <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#22d3ee" />
                 <LiquidGold />
                 {/* City environment yields hyper-realistic sharp metallic reflections */}
                 <Environment preset="city" />

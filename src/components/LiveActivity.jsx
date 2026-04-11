@@ -42,8 +42,8 @@ export default function LiveActivity() {
 
     // Theme Customization for GitHub Calendar map to match the Premium Gold Aesthetic
     const explicitTheme = {
-        light: ['var(--pure-black)', '#fef08a', '#facc15', '#eab308', '#ca8a04'],
-        dark: ['var(--pure-black)', '#d4af3740', '#d4af3780', '#d4af37c0', '#d4af37']
+        light: ['#f8fafc', '#bae6fd', '#7dd3fc', '#38bdf8', '#0284c7'],
+        dark: ['#0f172a', 'rgba(56, 189, 248, 0.1)', 'rgba(56, 189, 248, 0.2)', 'rgba(56, 189, 248, 0.4)', '#38bdf8']
     };
 
     return (

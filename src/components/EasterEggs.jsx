@@ -17,8 +17,8 @@ export default function EasterEggs() {
         // High-end Console Easter Egg
         console.log(
             '%c🚀 You found the hidden console message! \n%cI am a developer who loves building extraordinary digital experiences. \nTry entering the Konami Code on the site for a surprise!',
-            'color: #d4af37; font-size: 20px; font-weight: bold; background: #0a0a0b; padding: 10px;',
-            'color: #f8fafc; font-size: 14px; background: #0a0a0b; padding: 10px;'
+            'color: #38bdf8; font-size: 20px; font-weight: bold; background: #020617; padding: 10px;',
+            'color: #f8fafc; font-size: 14px; background: #020617; padding: 10px;'
         );
     }, []);
 
@@ -66,7 +66,7 @@ export default function EasterEggs() {
             confetti({
                 ...defaults, particleCount,
                 origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-                colors: ['#d4af37', '#f8fafc']
+                colors: ['#38bdf8', '#f8fafc']
             });
             confetti({
                 ...defaults, particleCount,
@@ -82,7 +82,7 @@ export default function EasterEggs() {
                 position: 'fixed', top: '20px', left: '50%', transform: 'translateX(-50%)',
                 background: 'var(--gold)', color: 'var(--bg)', padding: '12px 24px',
                 borderRadius: '8px', fontWeight: '800', zIndex: 9999,
-                boxShadow: '0 10px 30px rgba(212,175,55,0.4)', textTransform: 'uppercase', letterSpacing: '2px',
+                boxShadow: '0 10px 30px rgba(56,189,248,0.4)', textTransform: 'uppercase', letterSpacing: '2px',
                 transition: 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                 opacity: isKonamiActive ? 1 : 0,
                 pointerEvents: 'none'
