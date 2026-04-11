@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -27,6 +28,11 @@ const ScrollToTop = () => {
 
 const Home = () => (
   <>
+    <Helmet>
+      <title>Ankit Kumar | Full Stack Developer & AI Enthusiast</title>
+      <meta name="description" content="Portfolio of Ankit Kumar, a Full Stack Developer specializing in React, Node.js, and AI-driven solutions." />
+      <meta name="keywords" content="Ankit Kumar, Portfolio, Developer, Full Stack, React, Node.js, AI, Swaminarayan University" />
+    </Helmet>
     <Hero />
     <About />
     <Skills />
@@ -60,3 +66,4 @@ function App() {
 }
 
 export default App;
+
