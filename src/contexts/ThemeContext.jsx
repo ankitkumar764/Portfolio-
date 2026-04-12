@@ -4,7 +4,8 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState('dark'); // Default to our premium dark
+    // Default theme is 'sapphire' (equivalent to previous dark)
+    const [theme, setTheme] = useState('sapphire');
 
     useEffect(() => {
         const storedTheme = localStorage.getItem('portfolio-theme');
@@ -12,20 +13,18 @@ export const ThemeProvider = ({ children }) => {
             setTheme(storedTheme);
             document.documentElement.setAttribute('data-theme', storedTheme);
         } else {
-            // Apply fallback
-            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.setAttribute('data-theme', 'sapphire');
         }
     }, []);
 
-    const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('portfolio-theme', newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
+    const changeTheme = (themeName) => {
+        setTheme(themeName);
+        localStorage.setItem('portfolio-theme', themeName);
+        document.documentElement.setAttribute('data-theme', themeName);
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, changeTheme }}>
             {children}
         </ThemeContext.Provider>
     );

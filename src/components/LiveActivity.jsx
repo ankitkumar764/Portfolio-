@@ -17,7 +17,7 @@ export default function LiveActivity() {
                 if(Array.isArray(data)) {
                     const pushEvents = data.filter(event => event.type === 'PushEvent').slice(0, 10);
                     const recentCommits = pushEvents.flatMap(event => 
-                        event.payload.commits.map(c => ({
+                        (event.payload.commits || []).map(c => ({
                             repo: event.repo.name.split('/')[1] || event.repo.name,
                             message: c.message,
                             url: `https://github.com/${event.repo.name}/commit/${c.sha}`,
@@ -72,7 +72,7 @@ export default function LiveActivity() {
                                 username="ankitkumar764" 
                                 blockSize={16} 
                                 blockMargin={6} 
-                                colorScheme={theme}
+                                colorScheme={theme === 'light' ? 'light' : 'dark'}
                                 theme={explicitTheme}
                                 fontSize={14}
                             />

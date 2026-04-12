@@ -19,7 +19,7 @@ const navLinks = [
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const { theme, toggleTheme } = useContext(ThemeContext);
+    const { theme, changeTheme } = useContext(ThemeContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -126,14 +126,47 @@ export default function Navbar() {
                     ))}
                 </nav>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-                    {/* Theme Toggle */}
-                    <button onClick={toggleTheme} style={{ background: 'var(--cyan-muted)', border: '1px solid var(--border)', color: 'var(--cyan)', borderRadius: '10px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', transition: '0.3s' }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--cyan)'; e.currentTarget.style.color = '#fff'; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--cyan-muted)'; e.currentTarget.style.color = 'var(--cyan)'; }}
-                    >
-                        {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
-                    </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    {/* Theme Picker */}
+                    <div className="theme-picker" style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        background: 'rgba(var(--bg-card-rgb), 0.5)',
+                        padding: '6px 12px',
+                        borderRadius: '20px',
+                        border: '1px solid var(--border)',
+                        backdropFilter: 'blur(10px)'
+                    }}>
+                        {[
+                            { name: 'sapphire', color: '#06b6d4' },
+                            { name: 'emerald', color: '#10b981' },
+                            { name: 'amethyst', color: '#a855f7' },
+                            { name: 'crimson', color: '#f43f5e' },
+                            { name: 'solar', color: '#f59e0b' },
+                            { name: 'light', color: '#64748b' }
+                        ].map((t) => (
+                            <button
+                                key={t.name}
+                                onClick={() => changeTheme(t.name)}
+                                title={t.name.charAt(0).toUpperCase() + t.name.slice(1)}
+                                style={{
+                                    width: '18px',
+                                    height: '18px',
+                                    borderRadius: '50%',
+                                    background: t.color,
+                                    border: theme === t.name ? '2px solid #fff' : 'none',
+                                    cursor: 'pointer',
+                                    transition: '0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                                    transform: theme === t.name ? 'scale(1.2)' : 'scale(1)',
+                                    boxShadow: theme === t.name ? `0 0 10px ${t.color}` : 'none',
+                                    padding: 0
+                                }}
+                                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.3)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.transform = theme === t.name ? 'scale(1.2)' : 'scale(1)'; }}
+                            />
+                        ))}
+                    </div>
                     
                     {/* Mobile Toggle */}
                     <button onClick={() => setIsOpen(!isOpen)} className="show-mobile" style={{ background: 'none', border: 'none', color: 'var(--text)', cursor: 'pointer', padding: '8px' }}>
@@ -178,6 +211,31 @@ export default function Navbar() {
                                 )
                             )
                         ))}
+
+                        {/* Mobile Theme Picker */}
+                        <div style={{ display: 'flex', gap: '16px', marginTop: '20px' }}>
+                            {[
+                                { name: 'sapphire', color: '#06b6d4' },
+                                { name: 'emerald', color: '#10b981' },
+                                { name: 'amethyst', color: '#a855f7' },
+                                { name: 'crimson', color: '#f43f5e' },
+                                { name: 'solar', color: '#f59e0b' },
+                                { name: 'light', color: '#64748b' }
+                            ].map((t) => (
+                                <button
+                                    key={t.name}
+                                    onClick={() => { changeTheme(t.name); setIsOpen(false); }}
+                                    style={{
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '50%',
+                                        background: t.color,
+                                        border: theme === t.name ? '3px solid #fff' : 'none',
+                                        cursor: 'pointer'
+                                    }}
+                                />
+                            ))}
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
