@@ -8,12 +8,12 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Hackathons from './components/Hackathons';
+import CourseCertificates from './components/CourseCertificates';
 import LiveActivity from './components/LiveActivity';
 import Profiles from './components/Profiles';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
 import MouseSpotlight from './components/MouseSpotlight';
 import AmbientBackground from './components/AmbientBackground';
 import EasterEggs from './components/EasterEggs';
@@ -41,6 +41,7 @@ const Home = () => (
     <Skills />
     <Projects />
     <Hackathons />
+    <CourseCertificates />
     <LiveActivity />
     <Profiles />
     <Experience />
@@ -65,7 +66,6 @@ function App() {
             <ScrollToTop />
             <EasterEggs />
             <AmbientBackground />
-            <CustomCursor />
             <MouseSpotlight />
             <PremiumFrame />
             <Navbar />

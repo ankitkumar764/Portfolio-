@@ -52,18 +52,46 @@ export default function About() {
                                 borderRadius: '32px', 
                                 overflow: 'hidden', 
                                 border: '1px solid var(--border)', 
-                                background: 'rgba(255,255,255,0.02)',
+                                background: 'rgba(5, 5, 10, 0.8)',
                                 backdropFilter: 'blur(10px)',
                                 boxShadow: '0 40px 80px rgba(0,0,0,0.5)',
-                                position: 'relative'
+                                position: 'relative',
+                                display: 'flex',
+                                flexDirection: 'column'
                             }}>
-                                <img 
-                                    src="/developer_animation_placeholder_1775737113015.png" 
-                                    alt="Developer Animation" 
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-                                />
+                                {/* Mac-style Window Header */}
+                                <div style={{ display: 'flex', gap: '8px', padding: '20px 24px', background: 'rgba(255, 255, 255, 0.03)', borderBottom: '1px solid var(--border)' }}>
+                                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f43f5e' }} />
+                                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#f59e0b' }} />
+                                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10b981' }} />
+                                </div>
+                                
+                                {/* Code Editor Content */}
+                                <div style={{ padding: '32px 24px', fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '15px', lineHeight: '1.8', color: '#e2e8f0', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                                    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+                                        <span style={{ color: '#c678dd' }}>const</span> <span style={{ color: '#e5c07b' }}>developer</span> <span style={{ color: '#56b6c2' }}>=</span> {'{'}
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+                                        &nbsp;&nbsp;<span style={{ color: '#e06c75' }}>name</span>: <span style={{ color: '#98c379' }}>'Ankit'</span>,
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
+                                        &nbsp;&nbsp;<span style={{ color: '#e06c75' }}>role</span>: <span style={{ color: '#98c379' }}>'MERN Stack Developer'</span>,
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.6 }}>
+                                        &nbsp;&nbsp;<span style={{ color: '#e06c75' }}>skills</span>: [
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.8 }}>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#98c379' }}>'React'</span>, <span style={{ color: '#98c379' }}>'Node'</span>, <span style={{ color: '#98c379' }}>'TypeScript'</span>
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 1.0 }}>
+                                        &nbsp;&nbsp;]
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.2 }}>
+                                        {'}'}
+                                    </motion.div>
+                                </div>
                                 {/* Bottom Gradient for integration */}
-                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg) 0%, transparent 40%)', opacity: 0.6 }} />
+                                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg) 0%, transparent 40%)', pointerEvents: 'none' }} />
                             </div>
 
                             {/* Floating UI Elements for 'Animated' feel */}

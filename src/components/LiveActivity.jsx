@@ -1,11 +1,9 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
-import { ThemeContext } from '../contexts/ThemeContext';
 import { FiTerminal, FiCode, FiActivity } from 'react-icons/fi';
 
 export default function LiveActivity() {
-    const { theme } = useContext(ThemeContext);
     const [commits, setCommits] = useState([]);
     const [leetStats, setLeetStats] = useState(null);
 
@@ -40,39 +38,43 @@ export default function LiveActivity() {
             .catch(err => console.error(err));
     }, []);
 
-    // Theme Customization for GitHub Calendar map to match the Premium Gold Aesthetic
+    // Neo-Brutalist Github Heatmap Colors
     const explicitTheme = {
-        light: ['#f8fafc', '#bae6fd', '#7dd3fc', '#38bdf8', '#0284c7'],
-        dark: ['#0f172a', 'rgba(56, 189, 248, 0.1)', 'rgba(56, 189, 248, 0.2)', 'rgba(56, 189, 248, 0.4)', '#38bdf8']
+        light: ['#ebedf0', '#ffcf00', '#ffaa00', '#ff7700', '#ff4949'],
+        dark:  ['#ebedf0', '#ffcf00', '#ffaa00', '#ff7700', '#ff4949']
     };
 
     return (
         <section id="activity" style={{ padding: '120px 24px', position: 'relative', zIndex: 10 }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
                 
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '60px' }}>
-                    <p style={{ fontFamily: "'Outfit', sans-serif", color: 'var(--gold)', fontSize: '14px', fontWeight: '600', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px' }}>Telemetry</p>
-                    <h2 style={{ fontSize: 'clamp(32px, 5vw, 52px)', fontWeight: '800', color: 'var(--text)', letterSpacing: '-1.5px' }}>Live Activity.</h2>
-                </motion.div>
+                <div style={{ marginBottom: '60px', position: 'relative' }}>
+                    <span className="handwriting" style={{ position: 'absolute', top: '-30px', left: '10px', fontSize: '28px', color: 'var(--cyan)', transform: 'rotate(-5deg)' }}>
+                        Proof of work!
+                    </span>
+                    <h2 style={{ fontSize: 'clamp(48px, 8vw, 80px)', fontWeight: '800', lineHeight: '1', textTransform: 'uppercase', textShadow: '4px 4px 0 var(--cyan)' }}>
+                        Live Activity
+                    </h2>
+                </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
                     
                     {/* GitHub Heatmap Bento Full Width */}
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                        className="glass-premium"
-                        style={{ gridColumn: '1 / -1', padding: '40px', borderRadius: '16px', border: '1px solid var(--border)', background: 'var(--bg-card)', overflowX: 'auto' }}
+                        className="neo-brutalist"
+                        style={{ gridColumn: '1 / -1', padding: '40px', background: '#fff', overflowX: 'auto' }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
-                            <FiActivity size={24} color="var(--gold)" />
-                            <h3 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)' }}>Contribution Graph</h3>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px', borderBottom: '3px solid black', paddingBottom: '16px' }}>
+                            <FiActivity size={32} color="var(--cyan)" />
+                            <h3 style={{ fontSize: '28px', fontWeight: '800', color: 'var(--pure-black)', textTransform: 'uppercase' }}>Contribution Graph</h3>
                         </div>
                         <div style={{ minWidth: '800px' }}>
                             <GitHubCalendar 
                                 username="ankitkumar764" 
                                 blockSize={16} 
                                 blockMargin={6} 
-                                colorScheme={theme === 'light' ? 'light' : 'dark'}
+                                colorScheme="light"
                                 theme={explicitTheme}
                                 fontSize={14}
                             />
@@ -82,27 +84,27 @@ export default function LiveActivity() {
                     {/* Recent Commits Terminal Box */}
                     <motion.div 
                         initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-                        className="glass-premium"
-                        style={{ padding: '32px', borderRadius: '16px', border: '1px solid var(--border)', background: 'var(--bg-card)', display: 'flex', flexDirection: 'column' }}
+                        className="neo-brutalist"
+                        style={{ padding: '32px', background: '#fff', display: 'flex', flexDirection: 'column' }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                            <FiTerminal size={22} color="var(--gold)" />
-                            <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--text)' }}>Latest Commits</h3>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', borderBottom: '3px solid black', paddingBottom: '16px' }}>
+                            <FiTerminal size={28} color="var(--gold)" />
+                            <h3 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--pure-black)', textTransform: 'uppercase' }}>Latest Commits</h3>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1 }}>
                             {commits.length > 0 ? commits.map((commit, i) => (
-                                <a key={i} href={commit.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', display: 'block', padding: '16px', borderRadius: '8px', background: 'var(--border)', border: '1px solid var(--border-strong)', transition: '0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.transform = 'translateY(-2px)' }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-strong)'; e.currentTarget.style.transform = 'translateY(0)' }}>
+                                <a key={i} href={commit.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', display: 'block', padding: '16px', background: '#f4f0ea', border: '2px solid black', boxShadow: '2px 2px 0px 0px black', transition: '0.1s' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translate(-2px, -2px)'; e.currentTarget.style.boxShadow = '4px 4px 0px 0px black' }} onMouseLeave={(e) => {  e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '2px 2px 0px 0px black' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                                        <span style={{ fontSize: '13px', fontWeight: '800', color: 'var(--gold)', fontFamily: "'Outfit', sans-serif" }}>{commit.repo}</span>
-                                        <span style={{ fontSize: '11px', color: 'var(--text-mut)' }}>{commit.date}</span>
+                                        <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--pure-black)' }}>{commit.repo}</span>
+                                        <span style={{ fontSize: '12px', color: 'var(--text-mut)', fontWeight: '600' }}>{commit.date}</span>
                                     </div>
-                                    <p style={{ fontSize: '14px', color: 'var(--text-dim)', lineHeight: '1.5' }}>
+                                    <p style={{ fontSize: '15px', color: 'var(--text-dim)', lineHeight: '1.5', fontWeight: '500' }}>
                                         {commit.message.length > 55 ? commit.message.substring(0, 55) + '...' : commit.message}
                                     </p>
                                 </a>
                             )) : (
                                 <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    <p style={{ color: 'var(--text-mut)', fontSize: '14px', animation: 'pulse 1.5s infinite' }}>Establishing link to GitHub...</p>
+                                    <p className="handwriting" style={{ color: 'var(--text)', fontSize: '24px', animation: 'pulse 1.5s infinite' }}>Establishing link to GitHub...</p>
                                 </div>
                             )}
                         </div>
@@ -111,44 +113,44 @@ export default function LiveActivity() {
                     {/* LeetCode Algorithmic Data Box */}
                     <motion.div 
                         initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-                        className="glass-premium"
-                        style={{ padding: '32px', borderRadius: '16px', border: '1px solid var(--border)', background: 'var(--bg-card)', display: 'flex', flexDirection: 'column' }}
+                        className="neo-brutalist"
+                        style={{ padding: '32px', background: 'var(--gold)', display: 'flex', flexDirection: 'column' }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                            <FiCode size={22} color="var(--gold)" />
-                            <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--text)' }}>LeetCode Telemetry</h3>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', borderBottom: '3px solid black', paddingBottom: '16px' }}>
+                            <FiCode size={28} color="black" />
+                            <h3 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--pure-black)', textTransform: 'uppercase' }}>LeetCode Telemetry</h3>
                         </div>
                         
                         {leetStats ? (
                             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '24px' }}>
-                                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px', borderBottom: '1px solid var(--border)', paddingBottom: '24px' }}>
-                                    <span style={{ fontSize: '56px', fontWeight: '800', lineHeight: '1', color: 'var(--text)', letterSpacing: '-2px' }}>
+                                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
+                                    <span style={{ fontSize: '72px', fontWeight: '800', lineHeight: '0.8', color: 'var(--pure-black)', letterSpacing: '-4px' }}>
                                         {leetStats.totalSolved}
                                     </span>
-                                    <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text-mut)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '2px' }}>Problems Solved</span>
+                                    <span className="handwriting" style={{ fontSize: '24px', fontWeight: '600', color: 'black', marginBottom: '4px' }}>Problems Solved</span>
                                 </div>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                                    <div style={{ background: 'var(--border)', padding: '16px', borderRadius: '8px' }}>
-                                        <p style={{ fontSize: '11px', color: '#10b981', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Easy</p>
-                                        <p style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text)' }}>{leetStats.easySolved}</p>
+                                    <div style={{ background: '#fff', padding: '16px', border: '2px solid black', boxShadow: '2px 2px 0px 0px black' }}>
+                                        <p style={{ fontSize: '13px', color: '#10b981', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Easy</p>
+                                        <p style={{ fontSize: '28px', fontWeight: '800', color: 'var(--pure-black)' }}>{leetStats.easySolved}</p>
                                     </div>
-                                    <div style={{ background: 'var(--border)', padding: '16px', borderRadius: '8px' }}>
-                                        <p style={{ fontSize: '11px', color: '#f59e0b', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Medium</p>
-                                        <p style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text)' }}>{leetStats.mediumSolved}</p>
+                                    <div style={{ background: '#fff', padding: '16px', border: '2px solid black', boxShadow: '2px 2px 0px 0px black' }}>
+                                        <p style={{ fontSize: '13px', color: '#f59e0b', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Medium</p>
+                                        <p style={{ fontSize: '28px', fontWeight: '800', color: 'var(--pure-black)' }}>{leetStats.mediumSolved}</p>
                                     </div>
-                                    <div style={{ background: 'var(--border)', padding: '16px', borderRadius: '8px' }}>
-                                        <p style={{ fontSize: '11px', color: '#ef4444', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Hard</p>
-                                        <p style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text)' }}>{leetStats.hardSolved}</p>
+                                    <div style={{ background: '#fff', padding: '16px', border: '2px solid black', boxShadow: '2px 2px 0px 0px black' }}>
+                                        <p style={{ fontSize: '13px', color: '#ef4444', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Hard</p>
+                                        <p style={{ fontSize: '28px', fontWeight: '800', color: 'var(--pure-black)' }}>{leetStats.hardSolved}</p>
                                     </div>
-                                    <div style={{ background: 'var(--border)', padding: '16px', borderRadius: '8px' }}>
-                                        <p style={{ fontSize: '11px', color: 'var(--gold)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Ranking</p>
-                                        <p style={{ fontSize: '20px', fontWeight: '700', color: 'var(--text)' }}>#{leetStats.ranking.toLocaleString()}</p>
+                                    <div style={{ background: 'var(--cyan)', padding: '16px', border: '2px solid black', boxShadow: '2px 2px 0px 0px black' }}>
+                                        <p style={{ fontSize: '13px', color: 'black', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>Ranking</p>
+                                        <p style={{ fontSize: '24px', fontWeight: '800', color: 'white', textShadow: '1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000' }}>#{leetStats.ranking.toLocaleString()}</p>
                                     </div>
                                 </div>
                             </div>
                         ) : (
                             <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <p style={{ color: 'var(--text-mut)', fontSize: '14px', animation: 'pulse 1.5s infinite' }}>Connecting to LeetCode API...</p>
+                                <p className="handwriting" style={{ color: 'var(--text)', fontSize: '24px', animation: 'pulse 1.5s infinite' }}>Connecting to LeetCode API...</p>
                             </div>
                         )}
                     </motion.div>

@@ -6,7 +6,6 @@ const certificates = [
     {
         title: "AWS Certified Cloud Practitioner",
         issuer: "Amazon Web Services",
-        date: "2025",
         description: "Foundational knowledge of cloud concepts, security, technology, and billing.",
         link: "#",
         icon: "☁️"
@@ -14,7 +13,6 @@ const certificates = [
     {
         title: "Google Cloud Digital Leader",
         issuer: "Google Cloud",
-        date: "2024",
         description: "Understanding of Google Cloud core products and services.",
         link: "#",
         icon: "⚡"
@@ -22,7 +20,6 @@ const certificates = [
     {
         title: "Azure Fundamentals (AZ-900)",
         issuer: "Microsoft",
-        date: "2024",
         description: "Knowledge of cloud services and how those services are provided with Azure.",
         link: "#",
         icon: "🔷"
@@ -91,8 +88,6 @@ export default function Certificates() {
                             <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text)', marginBottom: '8px', lineHeight: '1.2' }}>{cert.title}</h3>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                                 <span style={{ color: 'var(--cyan)', fontWeight: '600', fontSize: '14px' }}>{cert.issuer}</span>
-                                <span style={{ width: '4px', height: '4px', background: 'var(--text-dim)', borderRadius: '50%', opacity: 0.3 }} />
-                                <span style={{ color: 'var(--text-dim)', fontSize: '14px' }}>{cert.date}</span>
                             </div>
                             
                             <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', marginBottom: '32px', fontSize: '15px' }}>
