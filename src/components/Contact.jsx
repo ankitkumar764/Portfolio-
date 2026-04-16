@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiMapPin, FiArrowRight } from 'react-icons/fi';
 import confetti from 'canvas-confetti';
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
-const AnimatedInput = ({ label, type = "text", rows }) => {
+const AnimatedInput = ({ label, type = "text", name, rows }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState('');
 
@@ -34,6 +36,7 @@ const AnimatedInput = ({ label, type = "text", rows }) => {
                 <textarea 
                     rows={rows} 
                     value={value}
+                    name={name}
                     required
                     onChange={(e) => setValue(e.target.value)}
                     onFocus={() => setIsFocused(true)}
@@ -50,6 +53,7 @@ const AnimatedInput = ({ label, type = "text", rows }) => {
                 <input 
                     type={type} 
                     value={value}
+                    name={name}
                     required
                     onChange={(e) => setValue(e.target.value)}
                     onFocus={() => setIsFocused(true)}
@@ -83,27 +87,33 @@ export default function Contact() {
         { label: 'Location', value: 'Gandhinagar, IN', href: null, icon: <FiMapPin /> },
     ];
 
+    const form = useRef();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus('loading');
         
-        // Simulate network request
-        setTimeout(() => {
-            setStatus('success');
-            
-            // Fire premium cyan and white confetti
-            confetti({
-                particleCount: 150,
-                spread: 100,
-                origin: { y: 0.6 },
-                colors: ['#06b6d4', '#f8fafc', '#0f172a']
-            });
+        // Replace with your actual EmailJS IDs
+        const SERVICE_ID = "YOUR_SERVICE_ID";
+        const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+        const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-            // Reset form after delay
-            setTimeout(() => {
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                setStatus('success');
+                confetti({
+                    particleCount: 150,
+                    spread: 100,
+                    origin: { y: 0.6 },
+                    colors: ['#06b6d4', '#f8fafc', '#0f172a']
+                });
+                form.current.reset();
+                setTimeout(() => setStatus('idle'), 6000);
+            }, (error) => {
+                console.error(error.text);
                 setStatus('idle');
-            }, 6000);
-        }, 1500);
+                alert("Failed to send message. Please try again later.");
+            });
     };
 
     return (
@@ -164,12 +174,13 @@ export default function Contact() {
                             {status === 'idle' && (
                                 <motion.form 
                                     key="form"
+                                    ref={form}
                                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.3 }}
                                     onSubmit={handleSubmit}
                                 >
-                                    <AnimatedInput label="Full Name" />
-                                    <AnimatedInput label="Email Address" type="email" />
-                                    <AnimatedInput label="Message Body" rows={4} />
+                                    <AnimatedInput label="Full Name" name="user_name" />
+                                    <AnimatedInput label="Email Address" name="user_email" type="email" />
+                                    <AnimatedInput label="Message Body" name="message" rows={4} />
 
                                     <button 
                                         type="submit"

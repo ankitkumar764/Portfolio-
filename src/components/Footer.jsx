@@ -1,10 +1,11 @@
-import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiTwitter, FiYoutube } from 'react-icons/fi';
 
 export default function Footer() {
     const social = [
         { Icon: FiGithub, href: 'https://github.com/ankitkumar764' },
         { Icon: FiLinkedin, href: 'https://www.linkedin.com/in/ankit-kumar-7721b0376/' },
         { Icon: FiTwitter, href: 'https://x.com/home?lang=en-in' },
+        { Icon: FiYoutube, href: 'https://youtube.com/@ankitkumar-r1k6z?si=A0xkKkyya8Bwied1' },
     ];
 
     return (

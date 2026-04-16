@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { FiGithub, FiLinkedin, FiCode, FiArrowDown } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiCode, FiArrowDown, FiYoutube } from 'react-icons/fi';
 
 export default function Hero() {
     return (
@@ -25,7 +25,7 @@ export default function Hero() {
                     </h1>
 
                     <p style={{ color: 'var(--text)', fontSize: 'clamp(18px, 2vw, 24px)', lineHeight: '1.6', marginBottom: '48px', maxWidth: '600px', fontWeight: '500', borderLeft: '4px solid black', paddingLeft: '20px' }}>
-                        I'm <span style={{ fontWeight: '800', background: 'var(--gold)', padding: '0 4px' }}>Ankit Kumar</span>, an engineer specialized in building high-performance, analog, and brutally honest digital experiences.
+                        I'm <span style={{ fontWeight: '800', background: 'var(--gold)', padding: '0 4px' }}>Ankit Singh</span>, an engineer specialized in building high-performance, analog, and brutally honest digital experiences.
                     </p>
 
                     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', marginBottom: '56px' }}>
@@ -47,6 +47,7 @@ export default function Hero() {
                             { icon: <FiGithub size={24} />, href: 'https://github.com/ankitkumar764', label: 'GitHub' },
                             { icon: <FiLinkedin size={24} />, href: 'https://www.linkedin.com/in/ankit-kumar-7721b0376/', label: 'LinkedIn' },
                             { icon: <FiCode size={24} />, href: 'https://leetcode.com/u/AnkitKumaar/', label: 'LeetCode' },
+                            { icon: <FiYoutube size={24} />, href: 'https://youtube.com/@ankitkumar-r1k6z?si=A0xkKkyya8Bwied1', label: 'YouTube' },
                         ].map((link, i) => (
                             <motion.a key={i} href={link.href} target="_blank" rel="noreferrer" 
                                 className="neo-brutalist"
