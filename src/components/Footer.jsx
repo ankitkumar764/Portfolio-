@@ -12,12 +12,8 @@ export default function Footer() {
         <footer style={{ padding: '80px 24px', background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
             <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '40px' }}>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: '24px', letterSpacing: '-1px', display: 'flex', alignItems: 'baseline' }}>
-                        <span style={{ fontWeight: '800', color: 'var(--text)' }}>A</span>
-                        <span style={{ fontWeight: '300', color: 'var(--gold)', marginLeft: '2px' }}>S</span>
-                        <span style={{ color: 'var(--gold)', fontWeight: '800' }}>.</span>
-                    </span>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src="/logo.png" alt="AS Logo" style={{ height: '32px', width: 'auto', borderRadius: '4px' }} />
                 </div>
 
                 <nav style={{ display: 'flex', gap: '32px' }}>

@@ -70,15 +70,8 @@ export default function Navbar() {
 
                 {/* Signature Logo */}
                 <RouterLink to="/" style={{ cursor: 'pointer', textDecoration: 'none' }}>
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'linear-gradient(135deg, var(--cyan), #818cf8)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 20px rgba(6, 182, 212, 0.3)' }}>
-                           <span style={{ fontWeight: '800', color: '#fff', fontSize: '20px' }}>A</span>
-                        </div>
-                        <span style={{
-                            fontFamily: "'Outfit', sans-serif", fontSize: '22px', letterSpacing: '-0.5px', fontWeight: '700', color: 'var(--text)'
-                        }}>
-                            ANKIT SINGH<span style={{ color: 'var(--cyan)' }}>.</span>
-                        </span>
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', alignItems: 'center' }}>
+                        <img src="/logo.png" alt="AS Logo" style={{ height: '45px', width: 'auto', borderRadius: '8px' }} />
                     </motion.div>
                 </RouterLink>
 
