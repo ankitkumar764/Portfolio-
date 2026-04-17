@@ -81,7 +81,7 @@ export default function Contact() {
 
     const contactInfo = [
         { label: 'Email', value: 'ak3185299@gmail.com', href: 'mailto:ak3185299@gmail.com', icon: <FiMail /> },
-        { label: 'LinkedIn', value: 'Ankit Kumar', href: 'https://www.linkedin.com/in/ankit-kumar-7721b0376/', icon: <FiLinkedin /> },
+        { label: 'LinkedIn', value: 'Ankit Singh', href: 'https://www.linkedin.com/in/ankit-kumar-7721b0376/', icon: <FiLinkedin /> },
         { label: 'GitHub', value: 'ankitkumar764', href: 'https://github.com/ankitkumar764', icon: <FiGithub /> },
         { label: 'Location', value: 'Gandhinagar, IN', href: null, icon: <FiMapPin /> },
     ];

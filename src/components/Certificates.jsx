@@ -30,12 +30,12 @@ export default function Certificates() {
     return (
         <>
         <Helmet>
-                <title>Certifications - Ankit Kumar</title>
-                <meta name="description" content="Professional certifications earned by Ankit Kumar, including AWS, Google Cloud, and Microsoft Azure certifications." />
-                <meta name="keywords" content="Ankit Kumar, Certifications, AWS, Google Cloud, Azure, Professional Certifications" />
-                <meta name="author" content="Ankit Kumar" />
-                <meta property="og:title" content="Certifications - Ankit Kumar" />
-                <meta property="og:description" content="Professional certifications earned by Ankit Kumar." />
+                <title>Certifications - Ankit Singh</title>
+                <meta name="description" content="Professional certifications earned by Ankit Singh, including AWS, Google Cloud, and Microsoft Azure certifications." />
+                <meta name="keywords" content="Ankit Singh, Certifications, AWS, Google Cloud, Azure, Professional Certifications" />
+                <meta name="author" content="Ankit Singh" />
+                <meta property="og:title" content="Certifications - Ankit Singh" />
+                <meta property="og:description" content="Professional certifications earned by Ankit Singh." />
                 <meta property="og:type" content="website" />
             </Helmet>
         <section style={{ padding: '160px 24px 100px', minHeight: '100vh', position: 'relative', background: 'var(--bg)' }}>

@@ -123,7 +123,7 @@ export default function Hero() {
                     </h1>
 
                     <p className="hero-intro-text" style={{ color: 'var(--text)', fontSize: 'clamp(18px, 2vw, 24px)', lineHeight: '1.6', marginBottom: '48px', maxWidth: '600px', fontWeight: '500', borderLeft: '4px solid black', paddingLeft: '20px' }}>
-                        I'm <span style={{ fontWeight: '800', background: 'var(--gold)', padding: '0 4px' }}>Ankit Kumar</span>, an engineer specialized in building high-performance, analog, and brutally honest digital experiences.
+                        I'm <span style={{ fontWeight: '800', background: 'var(--gold)', padding: '0 4px' }}>Ankit Singh</span>, an engineer specialized in building high-performance, analog, and brutally honest digital experiences.
                     </p>
 
                     <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', marginBottom: '56px', justifyContent: 'inherit' }}>
@@ -169,7 +169,7 @@ export default function Hero() {
                         {/* Tape effect */}
                         <div style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%) rotate(-3deg)', width: '120px', height: '40px', background: 'rgba(255,255,255,0.8)', border: '1px solid #ccc', boxShadow: '1px 1px 3px rgba(0,0,0,0.1)' }} />
                         
-                        <img src="/profile.jpg" alt="Ankit Kumar" style={{ width: '100%', height: '100%', objectFit: 'cover', border: '3px solid black', filter: 'grayscale(100%) contrast(1.2)' }} />
+                        <img src="/profile.jpg" alt="Ankit Singh" style={{ width: '100%', height: '100%', objectFit: 'cover', border: '3px solid black', filter: 'grayscale(100%) contrast(1.2)' }} />
                         
                         <span className="handwriting" style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', fontSize: '32px', color: 'black', whiteSpace: 'nowrap' }}>
                             That's me!

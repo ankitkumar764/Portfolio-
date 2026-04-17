@@ -11,7 +11,6 @@ const navLinks = [
     { name: 'Education', to: 'education' },
     { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
-    { name: 'Figma', to: 'figma' },
     { name: 'Certificates', to: '/certificates', isRoute: true },
     { name: 'Hackathons', to: 'hackathons' },
     { name: 'Experience', to: 'experience' },
@@ -78,7 +77,7 @@ export default function Navbar() {
                         <span style={{
                             fontFamily: "'Outfit', sans-serif", fontSize: '22px', letterSpacing: '-0.5px', fontWeight: '700', color: 'var(--text)'
                         }}>
-                            ANKIT KUMAR<span style={{ color: 'var(--cyan)' }}>.</span>
+                            ANKIT SINGH<span style={{ color: 'var(--cyan)' }}>.</span>
                         </span>
                     </motion.div>
                 </RouterLink>
