@@ -21,7 +21,7 @@ import Certificates from './components/Certificates';
 import PremiumFrame from './components/PremiumFrame';
 import RoboticWelcome from './components/RoboticWelcome';
 import FigmaDesigns from './components/FigmaDesigns';
-import Achievements from './components/Achievements';
+import EducationJourney from './components/EducationJourney';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,16 +34,16 @@ const ScrollToTop = () => {
 const Home = () => (
   <>
     <Helmet>
-      <title>Ankit Singh | Full Stack Developer & AI Enthusiast</title>
-      <meta name="description" content="Portfolio of Ankit Singh, a Full Stack Developer specializing in React, Node.js, and AI-driven solutions." />
-      <meta name="keywords" content="Ankit Singh, Portfolio, Developer, Full Stack, React, Node.js, AI, Swaminarayan University" />
+      <title>Ankit Kumar | Full Stack Developer & AI Enthusiast</title>
+      <meta name="description" content="Portfolio of Ankit Kumar, a Full Stack Developer specializing in React, Node.js, and AI-driven solutions." />
+      <meta name="keywords" content="Ankit Kumar, Portfolio, Developer, Full Stack, React, Node.js, AI, Swaminarayan University" />
     </Helmet>
     <Hero />
     <About />
+    <EducationJourney />
     <Skills />
     <Projects />
     <FigmaDesigns />
-    <Achievements />
     <Hackathons />
     <CourseCertificates />
     <LiveActivity />

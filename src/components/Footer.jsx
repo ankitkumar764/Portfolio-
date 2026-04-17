@@ -44,7 +44,7 @@ export default function Footer() {
 
                 <div style={{ textAlign: 'center' }}>
                     <p style={{ color: '#475569', fontSize: '12px', fontWeight: '500', letterSpacing: '0.5px' }}>
-                        &copy; {new Date().getFullYear()} Ankit Singh. Crafted for Quality.
+                        &copy; {new Date().getFullYear()} Ankit Kumar. Crafted for Quality.
                     </p>
                 </div>
             </div>

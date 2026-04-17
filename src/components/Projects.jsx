@@ -194,11 +194,25 @@ const ProjectCard = ({ project, index }) => {
 
 export default function Projects() {
     const [activeCategory, setActiveCategory] = useState('All');
+    const [showAll, setShowAll] = useState(false);
 
     const filteredProjects = useMemo(() => {
-        if (activeCategory === 'All') return projects;
-        return projects.filter(p => p.category === activeCategory);
+        let result = projects;
+        if (activeCategory !== 'All') {
+            result = projects.filter(p => p.category === activeCategory);
+        }
+        return result;
     }, [activeCategory]);
+
+    const displayedProjects = useMemo(() => {
+        return showAll ? filteredProjects : filteredProjects.slice(0, 4);
+    }, [filteredProjects, showAll]);
+
+    // Reset showAll when category changes
+    const handleCategoryChange = (cat) => {
+        setActiveCategory(cat);
+        setShowAll(false);
+    };
 
     return (
         <section id="projects" style={{ padding: '120px 24px', position: 'relative', zIndex: 10 }}>
@@ -220,7 +234,7 @@ export default function Projects() {
                     {['All', 'Games', 'Clones', 'Full Stack', 'Frontend'].map(cat => (
                         <button
                             key={cat}
-                            onClick={() => setActiveCategory(cat)}
+                            onClick={() => handleCategoryChange(cat)}
                             style={{
                                 padding: '10px 20px',
                                 background: activeCategory === cat ? 'var(--cyan)' : 'white',
@@ -244,8 +258,8 @@ export default function Projects() {
                     layout
                     style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '40px' }}
                 >
-                    <AnimatePresence>
-                        {filteredProjects.map((item, i) => (
+                    <AnimatePresence mode="popLayout">
+                        {displayedProjects.map((item, i) => (
                             <motion.div 
                                 layout
                                 key={item.num} 
@@ -259,6 +273,20 @@ export default function Projects() {
                         ))}
                     </AnimatePresence>
                 </motion.div>
+
+                {/* See More Button */}
+                {!showAll && filteredProjects.length > 4 && (
+                    <div style={{ marginTop: '60px', textAlign: 'center' }}>
+                        <button 
+                            onClick={() => setShowAll(true)}
+                            className="neo-brutalist-button"
+                            style={{ padding: '16px 48px', fontSize: '18px', fontWeight: '800' }}
+                        >
+                            See More Projects <FiArrowRight />
+                        </button>
+                    </div>
+                )}
+
                 
                 {/* Quote Section */}
                 <div style={{ marginTop: '120px', width: '100%', display: 'flex', justifyContent: 'center' }}>

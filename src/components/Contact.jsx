@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiMapPin, FiArrowRight } from 'react-icons/fi';
 import confetti from 'canvas-confetti';
-import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
 
 const AnimatedInput = ({ label, type = "text", name, rows }) => {
@@ -81,39 +80,53 @@ export default function Contact() {
     const [status, setStatus] = useState('idle'); // idle, loading, success
 
     const contactInfo = [
-        { label: 'Email', value: 'ak3185@gmail.com', href: 'mailto:ak3185@gmail.com', icon: <FiMail /> },
-        { label: 'LinkedIn', value: 'Ankit Singh', href: 'https://www.linkedin.com/in/ankit-kumar-7721b0376/', icon: <FiLinkedin /> },
+        { label: 'Email', value: 'ak3185299@gmail.com', href: 'mailto:ak3185299@gmail.com', icon: <FiMail /> },
+        { label: 'LinkedIn', value: 'Ankit Kumar', href: 'https://www.linkedin.com/in/ankit-kumar-7721b0376/', icon: <FiLinkedin /> },
         { label: 'GitHub', value: 'ankitkumar764', href: 'https://github.com/ankitkumar764', icon: <FiGithub /> },
         { label: 'Location', value: 'Gandhinagar, IN', href: null, icon: <FiMapPin /> },
     ];
 
     const form = useRef();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('loading');
         
-        // Replace with your actual EmailJS IDs
-        const SERVICE_ID = "YOUR_SERVICE_ID";
-        const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-        const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+        const formData = new FormData(form.current);
+        const data = Object.fromEntries(formData.entries());
 
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-            .then((result) => {
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/ak3185299@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...data,
+                    _subject: `New Portfolio Message from ${data.user_name}`,
+                    _captcha: "false"
+                })
+            });
+
+            if (response.ok) {
                 setStatus('success');
                 confetti({
                     particleCount: 150,
                     spread: 100,
                     origin: { y: 0.6 },
-                    colors: ['#06b6d4', '#f8fafc', '#0f172a']
+                    colors: ['#ff4949', '#ffcf00', '#ffffff']
                 });
                 form.current.reset();
                 setTimeout(() => setStatus('idle'), 6000);
-            }, (error) => {
-                console.error(error.text);
-                setStatus('idle');
-                alert("Failed to send message. Please try again later.");
-            });
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus('idle');
+            alert("Failed to send message. Please try again later.");
+        }
     };
 
     return (

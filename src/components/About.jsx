@@ -72,7 +72,7 @@ export default function About() {
                                         <span style={{ color: '#c678dd' }}>const</span> <span style={{ color: '#e5c07b' }}>developer</span> <span style={{ color: '#56b6c2' }}>=</span> {'{'}
                                     </motion.div>
                                     <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
-                                        &nbsp;&nbsp;<span style={{ color: '#e06c75' }}>name</span>: <span style={{ color: '#98c379' }}>'Ankit Singh'</span>,
+                                        &nbsp;&nbsp;<span style={{ color: '#e06c75' }}>name</span>: <span style={{ color: '#98c379' }}>'Ankit Kumar'</span>,
                                     </motion.div>
                                     <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
                                         &nbsp;&nbsp;<span style={{ color: '#e06c75' }}>role</span>: <span style={{ color: '#98c379' }}>'MERN Stack Developer'</span>,

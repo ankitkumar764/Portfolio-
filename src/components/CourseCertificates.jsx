@@ -29,6 +29,16 @@ const courses = [
         color: "#94a3b8",
         date: "Completed",
         desc: "Strong foundation in procedural programming, standard I/O, and hardware-level memory."
+    },
+    {
+        id: 4,
+        title: "Introduction to C++",
+        provider: "SoloLearn",
+        icon: SiCplusplus,
+        color: "#00599C",
+        date: "March 2026",
+        desc: "Mastered fundamental C++ concepts including basic syntax, variables, data types, and control flow structures.",
+        certId: "CC-VULA17A9"
     }
 ];
 
@@ -104,8 +114,11 @@ export default function CourseCertificates() {
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: course.color, fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px' }}>
                                     <FiCheckCircle size={14} /> {course.date}
                                 </div>
-                                <div style={{ color: 'var(--text-mut)', fontSize: '11px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                    <FiAward /> Verified
+                                <div style={{ color: 'var(--text-mut)', fontSize: '11px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                                        <FiAward /> Verified
+                                    </div>
+                                    {course.certId && <span style={{ fontSize: '9px', opacity: 0.7 }}>ID: {course.certId}</span>}
                                 </div>
                             </div>
                         </motion.div>

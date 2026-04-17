@@ -30,11 +30,11 @@ export default function Certificates() {
     return (
         <>
         <Helmet>
-                <title>Certifications - Ankit Singh</title>
-                <meta name="description" content="Professional certifications earned by Ankit Singh, including AWS, Google Cloud, and Microsoft Azure certifications." />
-                <meta name="keywords" content="Ankit Singh, Certifications, AWS, Google Cloud, Azure, Professional Certifications" />
-                <meta name="author" content="Ankit Singh" />
-                <meta property="og:title" content="Certifications - Ankit Singh" />
+                <title>Certifications - Ankit Kumar</title>
+                <meta name="description" content="Professional certifications earned by Ankit Kumar, including AWS, Google Cloud, and Microsoft Azure certifications." />
+                <meta name="keywords" content="Ankit Kumar, Certifications, AWS, Google Cloud, Azure, Professional Certifications" />
+                <meta name="author" content="Ankit Kumar" />
+                <meta property="og:title" content="Certifications - Ankit Kumar" />
                 <meta property="og:description" content="Professional certifications earned by Ankit Kumar." />
                 <meta property="og:type" content="website" />
             </Helmet>
@@ -131,13 +131,15 @@ export default function Certificates() {
                     <FiAward size={48} style={{ color: 'var(--cyan)', marginBottom: '24px', opacity: 0.5 }} />
                     <h2 style={{ fontSize: '28px', color: 'var(--text)', marginBottom: '16px' }}>Want to see more details?</h2>
                     <p style={{ color: 'var(--text-dim)', marginBottom: '32px' }}>Download my full resume to see academic records and other achievements.</p>
-                    <motion.button 
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        style={{ background: 'var(--cyan)', color: '#000', border: 'none', padding: '16px 40px', borderRadius: '14px', fontWeight: '700', fontSize: '16px', cursor: 'pointer', boxShadow: '0 10px 30px rgba(6, 182, 212, 0.3)' }}
-                    >
-                        Download CV
-                    </motion.button>
+                    <a href="/modern_resume.html" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <motion.button 
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            style={{ background: 'var(--cyan)', color: '#000', border: 'none', padding: '16px 40px', borderRadius: '14px', fontWeight: '700', fontSize: '16px', cursor: 'pointer', boxShadow: '0 10px 30px rgba(6, 182, 212, 0.3)' }}
+                        >
+                            Download CV
+                        </motion.button>
+                    </a>
                 </motion.div>
             </div>
         </section>

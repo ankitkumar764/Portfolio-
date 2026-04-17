@@ -3,127 +3,419 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ankit Singh - Resume</title>
-<script src="https://unpkg.com/feather-icons"></script>
+<title>Ankit Kumar — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #e0e6e6; color: #333; display: flex; justify-content: center; padding: 40px; }
-    .resume-container { width: 900px; display: flex; background: #f2f5f5; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; }
-    
-    /* Left Column */
-    .left-col { width: 33%; background: #ffffff; padding: 50px 30px; position: relative; z-index: 2; border-right: 1px solid #e8ebeb; }
-    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin: 0 auto 40px; display: block; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-    
-    .section-title { color: #2ba89c; font-size: 16px; text-transform: uppercase; margin-bottom: 20px; font-weight: normal; letter-spacing: 1px; }
-    
-    .contact-item { display: flex; align-items: center; margin-bottom: 18px; color: #0a2530; font-size: 14px; }
-    .contact-item:last-of-type { margin-bottom: 40px; }
-    .contact-icon { margin-right: 15px; width: 20px; text-align: center; color: #111; display: flex; justify-content: center; align-items: center; }
-    
-    .skills-list { list-style: none; margin-bottom: 40px; }
-    .skills-list li { display: flex; align-items: flex-start; margin-bottom: 15px; }
-    .skills-list li::before { content: "•"; color: #2ba89c; font-weight: bold; font-size: 20px; line-height: 18px; margin-right: 10px; }
-    .skills-list span { color: #4a5c68; font-size: 14px; line-height: 1.4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Right Column */
-    .right-col { width: 67%; background: #f2f5f5; position: relative; z-index: 1; padding-bottom: 50px; }
-    .header { padding: 40px 40px 30px 40px; text-align: center; }
-    .name { font-size: 54px; font-weight: normal; margin-bottom: 10px; letter-spacing: 1px; }
-    .name .first { color: #2ba89c; }
-    .name .last { color: #666666; }
-    .role { color: #2ba89c; font-size: 18px; font-weight: normal; letter-spacing: 0.5px; }
-    
-    /* Teal Box Ribbon */
-    .ribbon-wrap { position: relative; width: calc(100% + 40px); margin-left: -40px; margin-bottom: 40px; z-index: 2; }
-    .summary-box { background: #2ba89c; padding: 25px 40px 25px 50px; color: white; text-align: center; position: relative; z-index: 2; }
-    .summary-title { font-weight: bold; font-size: 16px; margin-bottom: 12px; }
-    .summary-text { font-size: 14.5px; line-height: 1.6; font-weight: normal; }
-    .ribbon-triangle { position: absolute; left: 0; bottom: -24px; width: 0; height: 0; border-top: 24px solid #1f786f; border-left: 40px solid transparent; z-index: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); }
-    
-    .right-content { padding: 0 40px; }
-    .exp-item { margin-bottom: 30px; }
-    .exp-header { font-size: 15.5px; margin-bottom: 5px; color: #000; }
-    .exp-header strong { font-weight: normal; }
-    .exp-header .company { color: #5a7d8f; }
-    .exp-date { color: #5a7d8f; font-size: 13.5px; margin-bottom: 12px; }
-    .exp-details { list-style: none; }
-    .exp-details li { display: flex; align-items: flex-start; margin-bottom: 10px; }
-    .exp-details li::before { content: "•"; color: #5a7d8f; font-weight: bold; font-size: 20px; line-height: 18px; margin-right: 12px; }
-    .exp-details span { color: #4a5c68; font-size: 14.5px; line-height: 1.5; }
+  body {
+    background: #f4f1ec;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .page {
+    background: #fdfcf9;
+    color: #1a1a1a;
+    max-width: 760px;
+    width: 100%;
+    padding: 48px 52px;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+    border-top: 4px solid #1a1a1a;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+    border-bottom: 1.5px solid #ddd;
+  }
+
+  .header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #111;
+    line-height: 1.1;
+  }
+
+  .header .role {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #777;
+    margin-top: 6px;
+  }
+
+  .header .contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .header .contact-row a,
+  .header .contact-row span {
+    font-size: 12px;
+    color: #444;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+
+  .header .contact-row a:hover { color: #111; text-decoration: underline; }
+
+  .sep {
+    color: #bbb;
+    font-size: 11px;
+    user-select: none;
+  }
+
+  /* LAYOUT */
+  .two-col {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+  }
+
+  /* SECTIONS */
+  .section { margin-bottom: 26px; }
+
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #111;
+    border-bottom: 1.5px solid #1a1a1a;
+    padding-bottom: 5px;
+    margin-bottom: 14px;
+  }
+
+  /* ABOUT ME */
+  .about-text {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  /* EDUCATION */
+  .edu-entry { margin-bottom: 14px; }
+  .edu-entry:last-child { margin-bottom: 0; }
+
+  .edu-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .edu-year {
+    font-size: 11px;
+    color: #888;
+    font-weight: 500;
+    margin-top: 1px;
+  }
+
+  .edu-degree {
+    font-size: 12px;
+    color: #555;
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+
+  .edu-cgpa {
+    margin-top: 4px;
+  }
+
+  .edu-cgpa span {
+    display: inline-block;
+    background: #111;
+    color: #fdfcf9;
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  /* SKILLS */
+  .skill-group { margin-bottom: 12px; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-group h4 {
+    font-size: 10px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .tag {
+    background: #f0ede8;
+    color: #333;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+    border: 1px solid #e0dbd3;
+  }
+
+  /* LANGUAGES */
+  .lang-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+
+  .lang-tag {
+    font-size: 11.5px;
+    color: #444;
+    background: #f0ede8;
+    padding: 3px 12px;
+    border-radius: 2px;
+    font-weight: 500;
+    border: 1px solid #e0dbd3;
+  }
+
+  /* PROJECTS */
+  .project { margin-bottom: 18px; }
+  .project:last-child { margin-bottom: 0; }
+
+  .project-title a {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1.5px solid #bbb;
+    padding-bottom: 1px;
+    line-height: 1.3;
+  }
+
+  .project-title a:hover { border-bottom-color: #111; }
+
+  .project-meta {
+    font-size: 10.5px;
+    color: #888;
+    margin-top: 3px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .project ul { padding-left: 15px; }
+
+  .project ul li {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 1px;
+  }
+
+  .project .stack {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #666;
+  }
+
+  .project .stack strong { color: #333; font-weight: 700; }
+
+  /* MINI CARDS */
+  .mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+
+  .mini-card {
+    background: #f5f2ed;
+    border: 1px solid #e4dfd8;
+    border-radius: 3px;
+    padding: 8px 11px;
+    transition: background 0.15s;
+  }
+
+  .mini-card:hover { background: #eceae5; }
+
+  .mini-card a {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .mini-card a:hover { color: #111; }
+
+  .edu-divider {
+    border: none;
+    border-top: 1px dashed #e0dbd3;
+    margin: 12px 0;
+  }
 </style>
 </head>
 <body>
-    <div class="resume-container">
-        <!-- Left Side -->
-        <div class="left-col">
-            <img src="./profile.jpg" alt="Ankit Singh" class="profile-img">
-            
-            <h2 class="section-title">PERSONAL<br>INFORMATION</h2>
-            <div class="contact-item">
-                <div class="contact-icon"><i data-feather="phone" stroke-width="2.5" width="18" height="18"></i></div>
-                <span>+91 XXXXX XXXXX</span>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon"><i data-feather="mail" stroke-width="2.5" width="18" height="18"></i></div>
-                <span>ak3185@gmail.com</span>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon"><i data-feather="user" stroke-width="2.5" width="18" height="18"></i></div>
-                <span>github.com/ankitkumar764</span>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon"><i data-feather="share-2" stroke-width="2.5" width="18" height="18"></i></div>
-                <span>Gandhinagar, Gujarat</span>
-            </div>
-            
-            <h2 class="section-title">KEY SKILLS</h2>
-            <ul class="skills-list">
-                <li><span>HTML5, CSS3, JavaScript</span></li>
-                <li><span>React, Tailwind, Node.js, Express</span></li>
-                <li><span>MongoDB, REST APIs</span></li>
-                <li><span>C, C++, Data Structures & Algorithms</span></li>
-                <li><span>Git, GitHub, Vercel, Postman</span></li>
-            </ul>
-        </div>
-        
-        <!-- Right Side -->
-        <div class="right-col">
-            <div class="header">
-                <h1 class="name"><span class="first">Ankit</span> <span class="last">Singh</span></h1>
-                <p class="role">Full Stack Engineer</p>
-            </div>
-            
-            <div class="ribbon-wrap">
-                <div class="ribbon-triangle"></div>
-                <div class="summary-box">
-                    <div class="summary-title">Full stack engineer with expertise in modern web technologies</div>
-                    <div class="summary-text">Dedicated software engineer passionate about building clean, responsive, and user-friendly web applications, bringing robust problem-solving skills and a focus on optimal system architecture.</div>
-                </div>
-            </div>
-            
-            <div class="right-content">
-                <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
-                <div class="exp-item">
-                    <div class="exp-header"><span style="color: #000; font-weight: 500;">Digital Products Developer</span> <span class="company">| Freelance & Personal</span></div>
-                    <div class="exp-date">June 2023 - Present</div>
-                    <ul class="exp-details">
-                        <li><span>Designed and built 20+ responsive full-stack applications leveraging modern web technologies and frameworks.</span></li>
-                        <li><span>Enhanced application performance through optimized caching strategies and robust RESTful API implementations.</span></li>
-                        <li><span>Maintained clean, readable code with Git version control in collaborative development environments.</span></li>
-                    </ul>
-                </div>
-                
-                <h2 class="section-title">EDUCATION</h2>
-                <div class="exp-item">
-                    <div class="exp-header"><span style="color: #000; font-weight: 500;">Bachelor of Engineering</span></div>
-                    <div class="company" style="font-size: 15px; margin-bottom: 6px;">Swaminarayan University X CG | Ahmedabad</div>
-                    <div class="exp-date">2025 - 2029</div>
-                </div>
-            </div>
-        </div>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Ankit Kumar</h1>
+    <div class="role">Full-Stack Developer</div>
+    <div class="contact-row">
+      <a href="tel:+919065404621">+91 90654 04621</a>
+      <span class="sep">·</span>
+      <a href="mailto:ak3185299@gmail.com">ak3185299@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/ankit-kumar-7721b0376/" target="_blank">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/ankitkumar764" target="_blank">GitHub</a>
+      <span class="sep">·</span>
+      <a href="https://leetcode.com/u/AnkitKumaar/" target="_blank">LeetCode</a>
+      <span class="sep">·</span>
+      <a href="https://www.youtube.com/@ANKITKUMAR-r1k6z" target="_blank">YouTube</a>
     </div>
-    <script>
-        feather.replace();
-    </script>
+  </div>
+
+  <div class="two-col">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <div class="section">
+        <div class="section-title">About Me</div>
+        <p class="about-text">
+          Passionate Full-Stack Developer and Computer Engineering student with a strong command of modern web technologies. I love building real-world products — from hackathon platforms to polished UI clones — and I'm always pushing forward through competitive programming and open-source work.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu-entry">
+          <div class="edu-name">Swaminarayan University</div>
+          <div class="edu-year">2025 – 2029</div>
+          <div class="edu-degree">B.E. Computer Engineering, Ahmedabad</div>
+          <div class="edu-cgpa"><span>CGPA 9.6</span></div>
+        </div>
+
+        <hr class="edu-divider">
+
+        <div class="edu-entry">
+          <div class="edu-name">Parwati High School</div>
+          <div class="edu-year">2022 – 2024</div>
+          <div class="edu-degree">Higher Secondary (XI–XII)<br>Bikram, Patna</div>
+        </div>
+
+        <hr class="edu-divider">
+
+        <div class="edu-entry">
+          <div class="edu-name">Gyan Deep Vidhyalay</div>
+          <div class="edu-year">2020 – 2022</div>
+          <div class="edu-degree">Secondary (IX–X), Patna</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Skills</div>
+
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="skill-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Backend &amp; DB</h4>
+          <div class="skill-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">RESTful APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h4>Tools &amp; Platforms</h4>
+          <div class="skill-tags">
+            <span class="tag">Git &amp; GitHub</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Netlify</span>
+            <span class="tag">Render</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Languages</div>
+        <div class="lang-tags">
+          <span class="lang-tag">English</span>
+          <span class="lang-tag">Hindi</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+
+      <div class="section">
+        <div class="section-title">Hackathon &amp; Team Projects</div>
+        <div class="project">
+          <div class="project-title">
+            <a href="https://algo-rangers.vercel.app/" target="_blank">Algo Rangers — Resume &amp; Skills Comparison</a>
+          </div>
+          <div class="project-meta">Full-Stack · Hackathon</div>
+          <ul>
+            <li>Built a platform to compare resumes and skills for smarter job matching</li>
+            <li>Implemented semantic comparison, skill gap analysis, and scoring dashboard</li>
+            <li>Enabled batch processing of multiple resumes for recruiter workflows</li>
+          </ul>
+          <div class="stack"><strong>Stack:</strong> React · Node.js · MongoDB · JavaScript · Tailwind CSS</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Frontend &amp; UI/UX Projects</div>
+        <div class="mini-grid">
+          <div class="mini-card"><a href="https://geminii-clone-ankit-singh.netlify.app/" target="_blank">Gemini Clone</a></div>
+          <div class="mini-card"><a href="https://udan-clone-ankit-singh.netlify.app/" target="_blank">Udan Airline Clone</a></div>
+          <div class="mini-card"><a href="https://bombay-closet-ankit-singh.netlify.app/" target="_blank">Bombay Closet Clone</a></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">JavaScript Games</div>
+        <div class="mini-grid">
+          <div class="mini-card"><a href="https://ankit-singh-todo.netlify.app/" target="_blank">To-Do List</a></div>
+          <div class="mini-card"><a href="https://ankitsinghtic-tac.netlify.app/" target="_blank">Tic-Tac-Toe</a></div>
+          <div class="mini-card"><a href="https://ankit-singh-whack-a-mole.netlify.app/" target="_blank">Whack A Mole</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>

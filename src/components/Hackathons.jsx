@@ -25,6 +25,16 @@ const hackathonData = {
             image: hack2,
             awards: ["Top 10 Finalist"],
             link: "#"
+        },
+        {
+            id: 'on3',
+            title: "Doppelgänger 30H Sprint",
+            organizer: "OpenPools",
+            date: "March 2026",
+            desc: "A collaborative 30-hour build sprint focused on transforming professional DNA into real-world solutions. Recognized for curiosity, creativity, and high-impact build contributions.",
+            image: "https://res.cloudinary.com/dxwlm3gex/image/upload/q_auto/f_auto/v1776427802/doppelanger_certificate_page-0001_ap8lg5.jpg",
+            awards: ["Certificate of Recognition", "High Impact Award"],
+            link: "https://openpools.in"
         }
     ],
     offline: [
